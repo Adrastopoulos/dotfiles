@@ -43,3 +43,9 @@ symbol = " "
 [elixir]
 format = "via [$symbol$version]($style) "
 symbol = " "
+
+[gcloud]
+disabled = true
+
+[docker_context]
+disabled = true
