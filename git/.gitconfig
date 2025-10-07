@@ -1,0 +1,50 @@
+[user]
+	name = Gabriel Hall
+	email = your.email@example.com
+
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	default = current
+	autoSetupRemote = true
+
+[fetch]
+	prune = true
+
+[rebase]
+	autoStash = true
+
+[diff]
+	algorithm = histogram
+	colorMoved = default
+
+[merge]
+	log = true
+	conflictstyle = zdiff3
+
+[rerere]
+	enabled = true
+
+[color]
+	ui = auto
+
+[alias]
+	st = status -s
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	d = diff
+	ds = diff --staged
+	amend = commit --amend --no-edit
+	undo = reset HEAD~1 --mixed
+	branches = branch -a --sort=-committerdate
+
+[include]
+	path = ~/.gitconfig.local

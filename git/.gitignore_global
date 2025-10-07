@@ -1,0 +1,55 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Node
+node_modules/
+npm-debug.log*
+.npm
+.eslintcache
+
+# Python
+__pycache__/
+*.py[cod]
+.Python
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# Build
+dist/
+build/
+*.log
+
+# Secrets
+.env
+.env.local
+*.key
+*.pem
+credentials.json

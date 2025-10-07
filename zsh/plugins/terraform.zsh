@@ -1,0 +1,1 @@
+command -v terraform &>/dev/null && complete -o nospace -C /opt/homebrew/bin/terraform terraform

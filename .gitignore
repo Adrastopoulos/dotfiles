@@ -1,0 +1,30 @@
+# Dotfiles Repository Gitignore
+
+# Local/private configuration files
+zsh/local.zsh
+git/.gitconfig.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Backup files created by scripts
+*.backup
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Private/sensitive files
+secrets/
+*.key
+*.pem
+
+# Temporary files
+*.tmp
+tmp/
+temp/
