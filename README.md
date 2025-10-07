@@ -1,11 +1,6 @@
 # dotfiles
 
-My macOS development setup.
-
-## Setup
-
 ```bash
-git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
-cd ~/dotfiles
-./scripts/setup.sh
+git clone git@github.com:Adrastopoulos/dotfiles.git # because you should use SSH
+./dotfiles/scripts/bootstrap.sh
 ```
