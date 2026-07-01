@@ -1,4 +1,10 @@
 {
+  config,
+  fullName,
+  email,
+  ...
+}:
+{
   programs.delta = {
     enable = true;
     enableGitIntegration = true;
@@ -13,7 +19,7 @@
     enable = true;
 
     signing = {
-      key = "/Users/gabrielhall/.ssh/id_ed25519.pub";
+      key = "${config.home.homeDirectory}/.ssh/id_ed25519.pub";
       format = "ssh";
       signByDefault = true;
     };
@@ -70,7 +76,7 @@
       };
       rerere.enabled = true;
       color.ui = "auto";
-      gpg.ssh.allowedSignersFile = "/Users/gabrielhall/.ssh/allowed_signers";
+      gpg.ssh.allowedSignersFile = "${config.home.homeDirectory}/.ssh/allowed_signers";
 
       alias = {
         st = "status -s";
@@ -86,7 +92,7 @@
 
   xdg.configFile."git/identity".text = ''
     [user]
-      name = Gabriel Hall
-      email = gabriel.hall@cox.net
+      name = ${fullName}
+      email = ${email}
   '';
 }

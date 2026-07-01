@@ -14,12 +14,19 @@
   };
 
   outputs =
-    { self, nix-darwin, home-manager, ... }:
+    {
+      self,
+      nix-darwin,
+      home-manager,
+      ...
+    }:
     let
       mkHost =
         {
           hostname,
           username,
+          fullName,
+          email,
           system ? "aarch64-darwin",
           darwinModules ? [ ],
           homeModules ? [ ],
@@ -35,6 +42,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "before-nix";
+                extraSpecialArgs = { inherit fullName email; };
                 users.${username}.imports = [ self.homeModules.default ] ++ homeModules;
               };
             }
@@ -51,6 +59,8 @@
       darwinConfigurations."Gabriels-MacBook-Pro" = mkHost {
         hostname = "Gabriels-MacBook-Pro";
         username = "gabrielhall";
+        fullName = "Gabriel Hall";
+        email = "gabriel.hall@cox.net";
       };
     };
 }

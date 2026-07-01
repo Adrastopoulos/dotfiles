@@ -5,6 +5,7 @@
     ./git.nix
     ./tools.nix
     ./packages.nix
+    ./runtimes.nix
   ];
 
   home.stateVersion = "24.11";
