@@ -1,10 +1,6 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
-  home.sessionPath = [
-    "$HOME/.local/bin"
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
-  ];
+  home.sessionPath = [ "$HOME/.local/bin" ];
 
   home.sessionVariables = {
     EDITOR = "vim";
@@ -24,6 +20,10 @@
     autocd = true;
     defaultKeymap = "emacs";
     setOptions = [ "HIST_VERIFY" ];
+
+    initContent = lib.mkAfter ''
+      path+=(/opt/homebrew/bin /opt/homebrew/sbin)
+    '';
 
     shellAliases = {
       ll = "ls -lah";
