@@ -20,6 +20,13 @@
     ];
   };
 
+  nix.optimise.automatic = true;
+  nix.gc = {
+    automatic = true;
+    interval.Day = 7;
+    options = "--delete-older-than 30d";
+  };
+
   programs.zsh.enable = true;
 
   security.pam.services.sudo_local.touchIdAuth = true;

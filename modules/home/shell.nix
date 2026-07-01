@@ -1,6 +1,10 @@
 { config, ... }:
 {
-  home.sessionPath = [ "$HOME/.local/bin" ];
+  home.sessionPath = [
+    "$HOME/.local/bin"
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
 
   home.sessionVariables = {
     EDITOR = "vim";
