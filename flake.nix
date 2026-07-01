@@ -11,6 +11,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -18,6 +22,7 @@
       self,
       nix-darwin,
       home-manager,
+      stylix,
       ...
     }:
     let
@@ -39,11 +44,14 @@
             home-manager.darwinModules.home-manager
             {
               home-manager = {
-                useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "before-nix";
                 extraSpecialArgs = { inherit fullName email; };
-                users.${username}.imports = [ self.homeModules.default ] ++ homeModules;
+                users.${username}.imports = [
+                  self.homeModules.default
+                  stylix.homeModules.stylix
+                ]
+                ++ homeModules;
               };
             }
           ]
