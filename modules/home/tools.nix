@@ -58,18 +58,39 @@
       };
       git_branch = {
         format = "[$symbol$branch]($style) ";
-        symbol = " ";
+        symbol = " ";
         style = "bold purple";
       };
       git_status = {
         format = "([$all_status$ahead_behind]($style) )";
         style = "bold yellow";
+        ahead = " \${count}";
+        behind = " \${count}";
+        diverged = " \${ahead_count} \${behind_count}";
+        conflicted = " \${count}";
+        untracked = " \${count}";
+        stashed = " \${count}";
+        modified = " \${count}";
+        staged = " \${count}";
+        renamed = " \${count}";
+        deleted = " \${count}";
       };
-      nodejs.format = "via [$symbol($version)]($style) ";
-      python.format = "via [$symbol$version]($style) ";
-      rust.format = "via [$symbol($version)]($style) ";
-      gcloud.disabled = true;
+      nodejs = {
+        format = "via [$symbol($version)]($style) ";
+        symbol = " ";
+      };
+      python = {
+        format = "via [$symbol$version]($style) ";
+        symbol = " ";
+      };
+      rust = {
+        format = "via [$symbol($version)]($style) ";
+        symbol = " ";
+      };
+      golang.symbol = " ";
+      nix_shell.symbol = " ";
       docker_context.disabled = true;
+      gcloud.disabled = true;
     };
   };
 }

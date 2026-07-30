@@ -8,8 +8,11 @@
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
-        name = "JetBrainsMono Nerd Font";
+        # "Mono" variant forces icons into a single cell, which keeps
+        # terminal columns aligned.
+        name = "JetBrainsMono Nerd Font Mono";
       };
+      sizes.terminal = 11;
     };
 
     targets.starship.enable = false;
