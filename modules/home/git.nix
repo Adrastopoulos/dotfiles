@@ -55,7 +55,6 @@
 
     settings = {
       core = {
-        editor = "vim";
         autocrlf = "input";
       };
       init.defaultBranch = "main";

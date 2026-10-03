@@ -4,7 +4,7 @@
 
   home.sessionVariables = {
     EDITOR = "vim";
-    VISUAL = "vim";
+    # VISUAL is set per session in initContent below.
     LANG = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
   };
@@ -23,6 +23,14 @@
 
     initContent = lib.mkAfter ''
       path+=(/opt/homebrew/bin /opt/homebrew/sbin)
+
+      # Open Zed for VISUAL (and so for git) on the Mac itself; SSH sessions
+      # have no GUI, so they keep vim.
+      if [[ -n $SSH_CONNECTION ]]; then
+        export VISUAL=vim
+      else
+        export VISUAL="zeditor --wait"
+      fi
     '';
 
     shellAliases = {
@@ -31,6 +39,8 @@
       l = "ls -CF";
       reload = "exec zsh";
       cat = "bat";
+      # nixpkgs installs the Zed CLI as zeditor.
+      zed = "zeditor";
     };
 
     history = {

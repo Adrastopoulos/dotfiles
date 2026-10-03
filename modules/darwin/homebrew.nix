@@ -13,7 +13,6 @@
     casks = [
       "ghostty"
       "warp"
-      "visual-studio-code"
       "ngrok"
     ];
   };

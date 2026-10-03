@@ -8,6 +8,7 @@
     ./runtimes.nix
     ./stylix.nix
     ./ghostty.nix
+    ./zed.nix
   ];
 
   home.stateVersion = "24.11";
