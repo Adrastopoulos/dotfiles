@@ -28,6 +28,10 @@
         command = "/opt/homebrew/bin/omp";
         args = [ "acp" ];
       };
+
+      # Resolves from ~/Projects/<repo> to ~/Worktrees/<repo>/<name>, where
+      # the worktree skill puts manual worktrees.
+      git.worktree_directory = "../../Worktrees";
     };
   };
 }
