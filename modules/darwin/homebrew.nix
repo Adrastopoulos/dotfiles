@@ -12,7 +12,6 @@
     ];
     casks = [
       "ghostty"
-      "warp"
       "ngrok"
     ];
   };
