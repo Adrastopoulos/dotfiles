@@ -32,6 +32,8 @@
       # Resolves from ~/Projects/<repo> to ~/Worktrees/<repo>/<name>, where
       # the worktree skill puts manual worktrees.
       git.worktree_directory = "../../Worktrees";
+
+      terminal.max_scroll_history_lines = 3000;
     };
   };
 }

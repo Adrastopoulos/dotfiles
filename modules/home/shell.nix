@@ -44,8 +44,8 @@
     };
 
     history = {
-      size = 10000;
-      save = 10000;
+      size = 5000;
+      save = 5000;
       extended = true;
       share = true;
       ignoreDups = true;
