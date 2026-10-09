@@ -12,7 +12,7 @@
         # terminal columns aligned.
         name = "JetBrainsMono Nerd Font Mono";
       };
-      sizes.terminal = 11;
+      sizes.terminal = 12;
     };
 
     targets.starship.enable = false;
