@@ -12,6 +12,7 @@
     ];
     casks = [
       "ghostty"
+      "monitorcontrol"
       "ngrok"
     ];
   };
